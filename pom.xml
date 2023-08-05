@@ -63,6 +63,20 @@
       <version>7.8.0</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>8.1.0</version>
+    </dependency>
+
+     https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.4.1</version>
+    </dependency>
+
 
   </dependencies>
 </project>
