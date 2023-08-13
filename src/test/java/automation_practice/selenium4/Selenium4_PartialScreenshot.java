@@ -3,7 +3,6 @@ package automation_practice.selenium4;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,12 +10,11 @@ import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Selenium4_ParialScreenshot {
+public class Selenium4_PartialScreenshot {
     public static void main(String[] args) throws InterruptedException, IOException {
 
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\Drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         driver.get("https://www.instagram.com/");
         driver.manage().window().maximize();
@@ -29,7 +27,7 @@ public class Selenium4_ParialScreenshot {
        Set<String> s= driver.getWindowHandles();
         Iterator<String> iterator=s.iterator();
         String parent=iterator.next();
-        String child=iterator.next();
+//        String child=iterator.next();
         driver.get("https://www.geeksforgeeks.org/top-50-array-coding-problems-for-interviews/");
 
         Thread.sleep(Duration.ofSeconds(5));

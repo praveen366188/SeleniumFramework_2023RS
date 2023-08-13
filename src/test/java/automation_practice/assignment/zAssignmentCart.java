@@ -14,18 +14,18 @@ import java.util.NoSuchElementException;
 public class zAssignmentCart {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\Drivers\\chromedriver.exe");
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
         driver.manage().window().maximize();
 
-        ArrayList<String> veggies=new ArrayList<>(Arrays.asList("Brocolli", "Cucumber", "Beetroot"));
-        for (String veggie: veggies) {
-            driver.findElement(By.xpath("//h4[contains(text(),'"+veggie+"')]/following-sibling::div/button")).click();
+        ArrayList<String> veggies = new ArrayList<>(Arrays.asList("Brocolli", "Cucumber", "Beetroot"));
+        for (String veggie : veggies) {
+            driver.findElement(By.xpath("//h4[contains(text(),'" + veggie + "')]/following-sibling::div/button")).click();
         }
         System.out.println(driver.findElement(By.xpath("//div[@class='cart-info']//tr[1]")).getText());
-        Assert.assertEquals(driver.findElement(By.xpath("//div[@class='cart-info']//tr[1]")).getText(),"Items : "+veggies.size());
+        Assert.assertEquals(driver.findElement(By.xpath("//div[@class='cart-info']//tr[1]")).getText(), "Items : " + veggies.size());
 
-        FluentWait wait=new FluentWait(driver);
+        FluentWait wait = new FluentWait(driver);
         wait.withTimeout(Duration.ofSeconds(10));
         wait.pollingEvery(Duration.ofSeconds(1));
         wait.ignoring(NoSuchElementException.class);

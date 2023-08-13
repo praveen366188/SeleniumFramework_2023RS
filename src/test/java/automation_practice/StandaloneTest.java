@@ -49,7 +49,7 @@ public class StandaloneTest {
 //            if (s1.equals("ADIDAS ORIGINAL"))
 //                e.findElement(By.xpath("//button[2]")).click();
 //        }
-        products.stream().filter(s -> s.findElement(By.cssSelector("b")).getText().equals("adidas original")).forEach(s -> System.out.println(s));
+        products.stream().filter(s -> s.findElement(By.cssSelector("b")).getText().equals("adidas original")).forEach(System.out::println);
         WebElement p = products.stream().filter(s -> s.findElement(By.cssSelector("b")).getText().equals("ADIDAS ORIGINAL")).findFirst().orElse(null);
         assert p != null;
         System.out.println(p.findElement(By.cssSelector("b")).getText());

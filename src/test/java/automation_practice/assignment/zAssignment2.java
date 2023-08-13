@@ -11,14 +11,14 @@ import java.time.Duration;
 public class zAssignment2 {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\Drivers\\chromedriver.exe");
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/angularpractice/");
         driver.manage().window().maximize();
         driver.findElement(By.name("name")).sendKeys("Praveenkumar");
         driver.findElement(By.name("email")).sendKeys("praveen@ddyhf.com");
         driver.findElement(By.id("exampleInputPassword1")).sendKeys("praveen123");
         driver.findElement(By.id("exampleCheck1")).click();
-        Select s=new Select(driver.findElement(By.id("exampleFormControlSelect1")));
+        Select s = new Select(driver.findElement(By.id("exampleFormControlSelect1")));
         s.selectByIndex(1);
         System.out.println(s.getFirstSelectedOption().getText());
         s.selectByVisibleText("Male");
@@ -33,7 +33,7 @@ public class zAssignment2 {
 
 
         System.out.println(driver.findElement(By.cssSelector(".alert.alert-success.alert-dismissible")).getText());
-        String ss=driver.findElement(By.cssSelector(".alert.alert-success.alert-dismissible")).getText();
+        String ss = driver.findElement(By.cssSelector(".alert.alert-success.alert-dismissible")).getText();
         Assert.assertTrue(ss.contains("Success! The Form has been submitted successfully!."));
         driver.quit();
 

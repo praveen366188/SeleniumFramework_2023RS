@@ -34,9 +34,9 @@ public class zAssignmentWaits {
         driver.findElement(By.id("signInBtn")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'Checkout')]")));
 
-        List<WebElement> list=driver.findElements(By.xpath("//button[@class='btn btn-info']"));
-        for (WebElement e:list
-             ) {
+        List<WebElement> list = driver.findElements(By.xpath("//button[@class='btn btn-info']"));
+        for (WebElement e : list
+        ) {
             e.click();
         }
         driver.findElement(By.xpath("//a[contains(text(),'Checkout')]")).click();

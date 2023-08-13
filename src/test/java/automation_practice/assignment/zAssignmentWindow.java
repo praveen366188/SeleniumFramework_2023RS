@@ -19,21 +19,21 @@ public class zAssignmentWindow {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.className("blinkingText")).click();
-        Set<String> windows=driver.getWindowHandles();
+        Set<String> windows = driver.getWindowHandles();
         System.out.println(windows);
-        Iterator<String> iterator=windows.iterator();
-        String parent=iterator.next();
-        String child= iterator.next();
+        Iterator<String> iterator = windows.iterator();
+        String parent = iterator.next();
+        String child = iterator.next();
         System.out.println(driver.getWindowHandle());
 
         driver.switchTo().window(child);
         System.out.println(driver.getWindowHandle());
-        String s=driver.findElement(By.cssSelector(".im-para.red")).getText();
+        String s = driver.findElement(By.cssSelector(".im-para.red")).getText();
 
 
 //        String s=driver.findElement(By.className("im-para red")).getText();
         System.out.println(s);
-       String un= s.split("mentor@")[1].split(" ")[0].split(".co")[0];
+        String un = s.split("mentor@")[1].split(" ")[0].split(".co")[0];
         System.out.println(un);
         driver.switchTo().window(parent);
         driver.findElement(By.id("username")).sendKeys(un);
