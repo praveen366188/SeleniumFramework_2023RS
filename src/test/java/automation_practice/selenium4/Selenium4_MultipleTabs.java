@@ -1,18 +1,17 @@
-package automation_practice;
+package automation_practice.selenium4;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Selenium4_ParialScreenshot {
-    public static void main(String[] args) throws InterruptedException, IOException {
+public class Selenium4_MultipleTabs {
+    public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\Drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -37,12 +36,8 @@ public class Selenium4_ParialScreenshot {
         String hee= driver.findElement(By.xpath("//h1[text()='Top 50 Array Coding Problems for Interviews']")).getText();
 
         driver.switchTo().window(parent);
-        WebElement e=driver.findElement(By.name("username"));
-        e.sendKeys(hee);
-       e.click();
-
-        File file=e.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file,new File("logo.png"));
+        driver.findElement(By.name("username")).sendKeys(hee);
+        driver.findElement(By.name("username")).click();
 
         Thread.sleep(Duration.ofSeconds(5));
         driver.quit();

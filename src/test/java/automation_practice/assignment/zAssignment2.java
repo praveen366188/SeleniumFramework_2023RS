@@ -1,4 +1,4 @@
-package automation_practice;
+package automation_practice.assignment;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class Assignment2 {
+public class zAssignment2 {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\Drivers\\chromedriver.exe");
         WebDriver driver=new ChromeDriver();

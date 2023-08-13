@@ -1,4 +1,4 @@
-package automation_practice;
+package automation_practice.assignment;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

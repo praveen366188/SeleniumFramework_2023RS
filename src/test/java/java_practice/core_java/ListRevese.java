@@ -1,10 +1,9 @@
-package Java_Practicr;
+package java_practice.core_java;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class Demo1 {
+public class ListRevese {
     public static void main(String[] args) {
         List<Integer> l = new ArrayList<>();
 //        List<Integer> l2 = Arrays.asList(new Integer[4]);

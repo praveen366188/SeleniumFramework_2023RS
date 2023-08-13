@@ -1,8 +1,7 @@
-package Java_Practicr;
+package java_practice.core_java;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class StreamPractice {
 

@@ -1,4 +1,4 @@
-package rsfw;
+package automation_practice;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

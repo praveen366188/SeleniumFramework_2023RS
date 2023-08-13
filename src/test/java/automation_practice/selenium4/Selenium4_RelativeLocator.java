@@ -1,4 +1,4 @@
-package automation_practice;
+package automation_practice.selenium4;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
