@@ -55,6 +55,17 @@
             <version>2.13.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.3.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
@@ -70,56 +81,5 @@
             <version>8.1.0</version>
         </dependency>
 
-        <!--     https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager-->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.4.1</version>
-        </dependency>
-
-
     </dependencies>
-    <profiles>
-        <profile>
-            <id>Smoke</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.1.2</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>testng.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-
-                </plugins>
-
-            </build>
-
-        </profile>
-
-        <profile>
-            <id>Regression</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.1.2</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>testng_annotation.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-
-            </build>
-        </profile>
-    </profiles>
-
-
 </project>
