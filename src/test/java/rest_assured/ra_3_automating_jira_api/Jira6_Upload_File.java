@@ -2,7 +2,6 @@ package rest_assured.ra_3_automating_jira_api;
 
 import io.restassured.RestAssured;
 import io.restassured.filter.session.SessionFilter;
-import io.restassured.response.Response;
 
 import java.io.File;
 
