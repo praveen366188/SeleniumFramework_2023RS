@@ -111,3 +111,8 @@ the other two are Basic authentication and OAuth.
 http://localhost:8080/rest/auth/1/session
 content-type application/json
 { "username": "praveen366188", "password": "Jira@5432" }
+
+Important Note on Jira Attachments
+Please do below  setting and make attachments ON before watching next video
+
+From Jira page, on top right, Select Settings Icon > System > Attachments (under Advanced): Set Allow Attachments to ON
