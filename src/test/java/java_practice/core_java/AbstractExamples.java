@@ -1,7 +1,9 @@
 package java_practice.core_java;
 
  public class AbstractExamples extends yy {
-
+    public AbstractExamples(){
+        System.out.println("a con");
+    }
 
      @Override
      public void m1() {
@@ -10,10 +12,10 @@ package java_practice.core_java;
 
      public static void main(String[] args) {
          yy abstractExamples=new AbstractExamples();
-         abstractExamples.m1();
-         abstractExamples.m2();
-         abstractExamples.m4();
-         AbstractExamples.m3();
+//         abstractExamples.m1();
+//         abstractExamples.m2();
+//         abstractExamples.m4();
+//         AbstractExamples.m3();
      }
  }
 

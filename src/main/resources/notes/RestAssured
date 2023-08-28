@@ -85,8 +85,7 @@ https://my.atlassian.com/license/evaluation?utm_nooverride=1&utm_nooverride=1&re
 
  http://localhost:8080/secure/WelcomeToJIRA.jspa
 when you restart the system we may not able to access the url
-c-programfiles- atrasian - jira- start server
-
+C:\Users\Admin\Atlassian\Jira\bin start jira bat file double click
 
 we are not using cloud jira
 we are relaying on jira server not cloud

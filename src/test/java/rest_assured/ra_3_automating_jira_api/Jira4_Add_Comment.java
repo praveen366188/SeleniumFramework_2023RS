@@ -9,7 +9,7 @@ public class Jira4_Add_Comment {
 
     public static void add_comment(SessionFilter sessionFilter, String id, String comment) {
         RestAssured.baseURI = "http://localhost:8080";
-       String response= given().body(get_add_comment_payload("comment added")).filter(sessionFilter)
+       String response= given().body(get_add_comment_payload("comment added")).header("Content-Type","application/json").filter(sessionFilter)
                 .when().post("/rest/api/2/issue/"+id+"/comment").then()
                 .statusCode(201).extract().response().asString();
 

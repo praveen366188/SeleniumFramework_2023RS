@@ -17,7 +17,7 @@ public class Test_Jira_API {
 //        get issue
         int status_code = Jira3_Get_Issue.getIssue(sessionFilter, id);
         Assert.assertEquals(status_code, 200);
-
+        Jira4_Add_Comment.add_comment(sessionFilter,id,"Hi");
 //        delete the created issue
         Jira5_DeleteIssue.delete_issue(sessionFilter, id);
 

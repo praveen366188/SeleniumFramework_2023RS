@@ -1,6 +1,6 @@
 package java_practice.core_java;
 
-public class Demo1 {
+public class StaticFUns {
     static int i = 90;
     int j = 99;
     public void mr(){
@@ -25,9 +25,9 @@ public class Demo1 {
  class SS{
 
      public static void main(String[] args) {
-         Demo1.A123 a=new Demo1.A123();
+         StaticFUns.A123 a=new StaticFUns.A123();
          System.out.println(a.k);
-         System.out.println(Demo1.A123.p);
+         System.out.println(StaticFUns.A123.p);
      }
 
 }
