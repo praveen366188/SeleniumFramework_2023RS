@@ -10,9 +10,10 @@ import static org.hamcrest.Matchers.*;
 public class Demo_Test_1 {
 
     public static void main(String[] args) {
+
         RestAssured.baseURI="https://rahulshettyacademy.com";
        String response= given().queryParam("key","qaclick123").header("Content-Type","application/json")
-                .body(Payloads.getPostPayloadAddPlace()).when().post("/maps/api/place/add/json")
+               .log().all().body(Payloads.getPostPayloadAddPlace()).when().post("/maps/api/place/add/json")
                 .then().assertThat().statusCode(200).body("status",equalTo("OK")).extract().response().asString();
         System.out.println(response);
 

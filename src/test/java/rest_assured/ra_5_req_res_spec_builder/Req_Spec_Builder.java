@@ -51,7 +51,6 @@ public class Req_Spec_Builder {
         String msg = CommonMethods.returnJsonObjString(response, "msg");
         Assert.assertEquals(msg, "Address successfully updated");
 
-
         response = given().spec(req).queryParam("place_id", place_id)
                 .when().get("/maps/api/place/get/json")
                 .then().statusCode(200).extract().response().asString();
