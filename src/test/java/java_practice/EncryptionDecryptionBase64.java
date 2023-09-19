@@ -3,7 +3,7 @@ package java_practice;
 
 import org.apache.commons.codec.binary.Base64;
 
-public class EncryptionDecryptionBase64 {
+public class EncryptionDecryptionBase64{
     public static void main(String[] args) {
         String password = "Jaycu@344331";
 
