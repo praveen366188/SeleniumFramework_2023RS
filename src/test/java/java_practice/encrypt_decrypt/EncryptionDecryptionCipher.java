@@ -1,4 +1,4 @@
-package java_practice.Programs;
+package java_practice.encrypt_decrypt;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;

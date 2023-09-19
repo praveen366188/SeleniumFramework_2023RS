@@ -1,4 +1,4 @@
-package java_practice;
+package java_practice.encrypt_decrypt;
 
 
 import org.apache.commons.codec.binary.Base64;
