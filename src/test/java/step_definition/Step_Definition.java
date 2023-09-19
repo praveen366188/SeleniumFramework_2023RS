@@ -6,6 +6,8 @@ import base_test.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import java_practice.email.SendEmail;
+import org.apache.commons.mail.EmailException;
 
 public class Step_Definition extends BaseTest {
     HomePg homePg;
@@ -34,6 +36,12 @@ public class Step_Definition extends BaseTest {
     @Then("User See Home Page")
     public void user_see_home_page() {
         homePg.verify_home_page();
+        close_browser();
+    }
+    @Then("We are sending mail to the user")
+    public void sendEmail() throws EmailException {
+
+        SendEmail.SendTheEmail("Smoke Test Results","Test 001 passed");
         close_browser();
     }
 

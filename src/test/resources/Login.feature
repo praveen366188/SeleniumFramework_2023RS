@@ -5,4 +5,5 @@ Feature: Instagram Automation
     Given User Enter Username
     And User Enter Password
     When User Click Login Button
-    When User See Home Page
+    Then User See Home Page
+    And We are sending mail to the user
