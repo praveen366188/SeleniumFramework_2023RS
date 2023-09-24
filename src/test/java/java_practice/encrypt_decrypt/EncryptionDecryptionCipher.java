@@ -39,10 +39,10 @@ public class EncryptionDecryptionCipher {
 
 
     public static void main(String[] args) throws Exception {
-String encrypted_string=encryptPassword("Password@123","abc");
+String encrypted_string=encryptPassword("gfssdfsdfst","lajet");
 
         System.out.println(encrypted_string);
-        System.out.println(decryptPassword(encrypted_string,"abc"));
+        System.out.println(decryptPassword(encrypted_string,"lajet"));
 
     }
 

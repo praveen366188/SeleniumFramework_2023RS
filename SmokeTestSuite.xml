@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke Test Suite">
+	<listeners>
+		<listener class-name="extent_report.practice.listeners.ExtentReportListener" />
+	</listeners>
+	<test name="annotation">
+		<classes>
+			<class name="testNG.DemoTestNg"/>
+		</classes>
+	</test>
+
+</suite>

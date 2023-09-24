@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SendInTable {
-    public static void main(String[] args) throws EmailException {
+    public static void main(String[] args) throws Exception {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
         String s1="<!DOCTYPE html>\n" +

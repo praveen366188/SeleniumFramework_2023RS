@@ -1,13 +1,13 @@
 package java_practice.email;
 
+import java_practice.encrypt_decrypt.EncryptionDecryptionCipher;
 import org.apache.commons.mail.*;
 
 public class SendEmail_WithAttachments {
-    public static void main(String[] args) throws EmailException {
+    public static void main(String[] args) throws Exception {
 
 
 // To generate outh password https://www.youtube.com/watch?v=nuD6qNAurVM
-//        gqmh rjlz lean mxnt
         System.out.println("========SENDING MAIL=============");
         EmailAttachment emailAttachment = new EmailAttachment();
         emailAttachment.setPath("IMG_20230629_081348_794.jpg");
@@ -18,7 +18,7 @@ public class SendEmail_WithAttachments {
         MultiPartEmail email = new MultiPartEmail();
         email.setHostName("smtp.gmail.com");
         email.setSmtpPort(465);
-        email.setAuthenticator(new DefaultAuthenticator("praveenkumarthedanger@gmail.com", "gqmh rjlz lean mxnt"));
+        email.setAuthenticator(new DefaultAuthenticator("praveenkumarthedanger@gmail.com", EncryptionDecryptionCipher.decryptPassword("yTiPqLCdK4MPDQlbes9WJLF87YOx2eBrtJ/3zt/Wx+Q=","lajet")));
         email.setSSLOnConnect(true);
         email.setFrom("praveenkumarthedanger@gmail.com");
         email.addTo("praveenkumarthedanger@gmail.com");

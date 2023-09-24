@@ -27,7 +27,7 @@
        <!-- <groups>
             <run>
                 <include name="smoke"/>
-            </run>
+            </run>F
         </groups>-->
         <parameter name="pktu" value="TUTU"/>
 

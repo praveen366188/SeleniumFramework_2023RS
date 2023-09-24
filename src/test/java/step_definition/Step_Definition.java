@@ -1,5 +1,6 @@
 package step_definition;
 
+import org.testng.annotations.Listeners;
 import page_objects.HomePg;
 import page_objects.LoginPg;
 import base_test.BaseTest;
@@ -8,7 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java_practice.email.SendEmail;
 import org.apache.commons.mail.EmailException;
-
+@Listeners(extent_report.practice.listeners.ExtentReportListener.class)
 public class Step_Definition extends BaseTest {
     HomePg homePg;
     LoginPg loginPg;
@@ -39,10 +40,9 @@ public class Step_Definition extends BaseTest {
         close_browser();
     }
     @Then("We are sending mail to the user")
-    public void sendEmail() throws EmailException {
+    public void sendEmail() throws Exception {
 
         SendEmail.SendTheEmail("Smoke Test Results","Test 001 passed");
-        close_browser();
     }
 
 }
