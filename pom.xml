@@ -64,6 +64,13 @@
             <artifactId>commons-codec</artifactId>
             <version>1.15</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.github.captainmaximo/smtp-client -->
         <dependency>
             <groupId>com.github.captainmaximo</groupId>

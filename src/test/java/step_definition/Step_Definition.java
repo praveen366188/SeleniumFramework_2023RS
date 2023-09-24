@@ -1,7 +1,7 @@
 package step_definition;
 
-import PageObjects.HomePg;
-import PageObjects.LoginPg;
+import page_objects.HomePg;
+import page_objects.LoginPg;
 import base_test.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
