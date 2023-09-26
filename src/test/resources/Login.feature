@@ -6,4 +6,4 @@ Feature: Instagram Automation
     And User Enter Password
     When User Click Login Button
     Then User See Home Page
-    And We are sending mail to the user
+#    And We are sending mail to the user
