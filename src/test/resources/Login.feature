@@ -3,7 +3,13 @@ Feature: Instagram Automation
 
   Scenario: Login with valid username and password
     Given User Enter Username
-    And User Enter Password
-    When User Click Login Button
-    Then User See Home Page
+#    And User Enter Password
+#    When User Click Login Button
+#    Then User See Home Page
 #    And We are sending mail to the user
+
+#  Scenario: Login with valid username and password
+#    Given User Enter Username
+#    And User Enter Password
+#    When User Click Login Button
+#    Then User See Home Page

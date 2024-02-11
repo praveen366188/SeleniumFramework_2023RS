@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 import java.util.Iterator;
@@ -23,23 +24,22 @@ public class Selenium4_MultipleTabs {
         driver.switchTo().newWindow(WindowType.WINDOW);
 
         //get the window handles and iterate and switch to the newly opened window and launch url
-
-       Set<String> s= driver.getWindowHandles();
-        Iterator<String> iterator=s.iterator();
-        String parent=iterator.next();
+//
+//       Set<String> s= driver.getWindowHandles();
+//        Iterator<String> iterator=s.iterator();
+//        String parent=iterator.next();
 //        String child=iterator.next();
         driver.get("https://www.geeksforgeeks.org/top-50-array-coding-problems-for-interviews/");
 
         Thread.sleep(Duration.ofSeconds(5));
-
         String hee= driver.findElement(By.xpath("//h1[text()='Top 50 Array Coding Problems for Interviews']")).getText();
-
-        driver.switchTo().window(parent);
+//        driver.switchTo().window(parent);
         driver.findElement(By.name("username")).sendKeys(hee);
         driver.findElement(By.name("username")).click();
-
         Thread.sleep(Duration.ofSeconds(5));
         driver.quit();
-
+        ChromeOptions chromeOptions=new ChromeOptions();
+//        chromeOptions.
+        System.out.println("success!");
     }
 }
