@@ -19,6 +19,12 @@ How to send input data in POST?
 Ans: Using Form Parameters /Body Payload
 
 
+What is URI in REST API with example?
+URIs are identifiers of resources that work across the Web. A URI consists of a scheme (such as http and https ),
+a host (such as www.example.org ),
+a port number followed by a path with one or more segments (such as /users/1234 ),
+and a query string.
+
 
 
 PUT- Replaces all current representations of the target resource with the uploaded content.

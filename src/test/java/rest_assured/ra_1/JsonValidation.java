@@ -12,7 +12,7 @@ public class JsonValidation {
 //        4. Print All course titles and their respective Prices
 //        5. Print no of copies sold by RPA Course
 //        6. Verify if Sum of all Course prices matches with Purchase Amount
-
+        System.out.println(Payloads.mockJSON());
         JsonPath jsonPath = new JsonPath(Payloads.mockJSON());
         int total_course_count = jsonPath.getInt("courses.size()");
         System.out.println(total_course_count);

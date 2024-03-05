@@ -12,6 +12,7 @@ public class Jira5_DeleteIssue {
         given().filter(sessionFilter).when().delete("/rest/api/2/issue/"+id+"")
                 .then().assertThat().statusCode(204);
 
+
     }
 
 }

@@ -10,6 +10,10 @@ public class RemoveWhiteSpace {
                 s2.append(s1.charAt(i));
         }
         System.out.println(s2);
+        String s="P    r  avee   n  k   u  ma  r ";
+        s=s.replaceAll("\\s","");
+        System.out.println(s);
+
 
     }
 }
