@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListRevese {
+    int a=333;
     public static void main(String[] args) {
         List<Integer> l = new ArrayList<>();
 //        List<Integer> l2 = Arrays.asList(new Integer[4]);

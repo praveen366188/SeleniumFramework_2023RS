@@ -1,5 +1,7 @@
 package java_practice.linkedIn_programs;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -48,4 +50,36 @@ public class VerifyBracketsUsingStack {
         }
     }
 
+    public static class PalindromeOrNot {
+        public static boolean palindrome_or_not(String s1){
+            for (int i = 0; i < s1.length(); i++) {
+                if(s1.charAt(i)!=s1.charAt(s1.length()-i-1))
+                    return false;
+
+            }
+            return true;
+        }
+        public static void main(String[] args) {
+            String s1="malayalam";
+            System.out.println(palindrome_or_not(s1));
+
+
+            }
+
+
+        }
+
+    public static class SortingAnArray {
+
+        public static void main(String[] args) {
+
+            int[] a={4,3,2,6,1,9,3,0};
+            Arrays.sort(a);
+            System.out.println(Arrays.toString(a));
+            List<Integer> list=Arrays.asList(1, 2, 3);
+            list.add(1);
+            list.add(2);
+            list.remove(1);
+        }
+    }
 }

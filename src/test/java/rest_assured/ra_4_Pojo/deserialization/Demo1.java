@@ -12,6 +12,8 @@ public class Demo1 {
         RestAssured.baseURI = "https://reqres.in";
         ListOfResource listOfResource = given().header("Content-Type", "application/json").when().get("/api/unknown")
                 .then().statusCode(200).extract().response().as(ListOfResource.class);
+//        System.out.println(given().header("Content-Type", "application/json").when().get("/api/unknown")
+//                .then().statusCode(200).extract().response().asString());
         System.out.println(listOfResource.getPage());
         System.out.println(listOfResource.getPer_page());
         System.out.println(listOfResource.getTotal());
@@ -26,6 +28,9 @@ public class Demo1 {
             System.out.println(l.getYear());
             System.out.println(l.getPantone_value());
         }
+        Support support= listOfResource.getSupport();
+        System.out.println(support.getText());
+        System.out.println(support.getUrl());
 
     }
 }

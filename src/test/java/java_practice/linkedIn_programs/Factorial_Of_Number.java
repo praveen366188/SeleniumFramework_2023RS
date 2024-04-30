@@ -4,24 +4,17 @@ import java.util.Scanner;
 
 public class Factorial_Of_Number {
     public static int rec(int n){
-
-        if (n == 0) {
+        if(n==0)
             return 1;
-
-        }
-        else{
+        else
             return n*rec(n-1);
-        }
     }
     public static void main(String[] args) {
 
-        Scanner s=new Scanner(System.in);
-        int n=s.nextInt();
-        int f=1;
-        for (int i = 1; i < n ; i++) {
-            f=rec(n);
-        }
-        System.out.println(f);
+        System.out.println("Enter the value you want to find the factorial: ");
+        Scanner scanner=new Scanner(System.in);
+        int fact=scanner.nextInt();
+        System.out.println("The recursion of the value "+fact+" is "+rec(fact));
 
     }
 

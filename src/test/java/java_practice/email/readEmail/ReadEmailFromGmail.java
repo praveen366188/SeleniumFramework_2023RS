@@ -2,10 +2,7 @@ package java_practice.email.readEmail;
 
 import java_practice.encrypt_decrypt.EncryptionDecryptionCipher;
 
-import javax.mail.Folder;
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.Store;
+import javax.mail.*;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -40,7 +37,8 @@ public class ReadEmailFromGmail {
             System.out.println(Arrays.toString(messages));
             for (final Message msg : messages) {
                 final String subject = msg.getSubject();
-                System.out.println(subject);
+                System.out.println("Subject--->  "+subject);
+
             }
         }
 

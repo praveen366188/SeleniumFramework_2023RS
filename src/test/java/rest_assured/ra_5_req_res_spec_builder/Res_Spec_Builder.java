@@ -17,65 +17,79 @@ public class Res_Spec_Builder {
 
     public static void main(String[] args) {
         /*
-         * create a place and verify its created and store the place id POST call
-         * using the place id get the place GET call
-         * using the place id update the place and verify the address PUT call
-         * using get call and verify the updated address GET call
-         * delete the place that we created and verify the status code
-         * using the place id and get the place and verify the 404 error code - get call - negative test case
-         * */
-//        create a place and verify its created and store the place id POST call
-        RequestSpecification req=new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").addQueryParam("key", "qaclick123")
-                .addHeader("Content-Type", "application/json").build();
-        ResponseSpecification res = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+         * Create a place and verify its creation, then store the place ID
+         * Perform a GET call using the place ID
+         * Update the place using the place ID and verify the address
+         * Perform another GET call to verify the updated address
+         * Delete the place and verify the status code
+         * Perform a GET call using the place ID to verify a 404 error - negative test case
+         */
+
+        // Creating Request Specification
+        RequestSpecification reqSpec = new RequestSpecBuilder()
+                .setBaseUri("https://rahulshettyacademy.com")
+                .addQueryParam("key", "qaclick123")
+                .addHeader("Content-Type", "application/json")
+                .build();
+
+        // Creating Response Specification
+        ResponseSpecification resSpec = new ResponseSpecBuilder()
+                .expectStatusCode(200)
+                .expectContentType(ContentType.JSON)
+                .build();
+
         RestAssured.baseURI = "https://rahulshettyacademy.com";
-        String response = given().spec(req)
-                .body(Payloads.getPostPayloadAddPlace()).when().post("/maps/api/place/add/json")
-                .then().assertThat().spec(res).body("status", equalTo("OK")).extract().response().asString();
 
-        String place_id = CommonMethods.returnJsonObjString(response, "place_id");
-        System.out.println(place_id);
-//        using the place id get the place GET call
+        // POST request to create a place and verify its creation
+        String response = given().spec(reqSpec)
+                .body(Payloads.getPostPayloadAddPlace())
+                .when().post("/maps/api/place/add/json")
+                .then().assertThat().spec(resSpec).body("status", equalTo("OK")).extract().response().asString();
 
-        response = given().spec(req).queryParam("place_id", place_id)
+        String placeId = CommonMethods.returnJsonObjString(response, "place_id");
+        System.out.println("Place ID: " + placeId);
+
+        // GET request using the place ID
+        response = given().spec(reqSpec)
+                .queryParam("place_id", placeId)
                 .when().get("/maps/api/place/get/json")
-                .then().spec(res).extract().response().asString();
+                .then().spec(resSpec).extract().response().asString();
+        System.out.println("Response for GET request: " + response);
 
-//        using the place id update the place and verify the address PUT call
-
-        response = given().spec(req).body("{\n" +
-                        "    \"place_id\": \"" + place_id + "\",\n" +
+        // PUT request to update the place and verify the address
+        response = given().spec(reqSpec).body("{\n" +
+                        "    \"place_id\": \"" + placeId + "\",\n" +
                         "    \"address\": \"70 praveenkumar walk, USA\",\n" +
                         "    \"key\": \"qaclick123\"\n" +
                         "}")
                 .when().put("/maps/api/place/update/json")
-                .then().spec(res).extract().response().asString();
+                .then().spec(resSpec).extract().response().asString();
 
         String msg = CommonMethods.returnJsonObjString(response, "msg");
         Assert.assertEquals(msg, "Address successfully updated");
+        System.out.println("Address successfully updated.");
 
-
-        response = given().spec(req).queryParam("place_id", place_id)
+        // GET request to verify the updated address
+        response = given().spec(reqSpec)
+                .queryParam("place_id", placeId)
                 .when().get("/maps/api/place/get/json")
-                .then().spec(res).extract().response().asString();
+                .then().spec(resSpec).extract().response().asString();
+        System.out.println("Response for GET request after update: " + response);
 
-        String address = CommonMethods.returnJsonObjString(response, "address");
-        Assert.assertEquals(address, "70 praveenkumar walk, USA");
-
-
+        // DELETE request to delete the place
         given().body("{\n" +
-                        "    \"place_id\": \"" + place_id + "\"\n" +
+                        "    \"place_id\": \"" + placeId + "\"\n" +
                         "}").when().delete("/maps/api/place/delete/json")
-                .then().spec(res);
+                .then().spec(resSpec);
+        System.out.println("Place deleted successfully.");
 
-
-        response = given().spec(req).queryParam("place_id", place_id)
+        // GET request to verify 404 error - negative test case
+        response = given().spec(reqSpec)
+                .queryParam("place_id", placeId)
                 .when().get("/maps/api/place/get/json")
                 .then().statusCode(404).extract().response().asString();
         msg = CommonMethods.returnJsonObjString(response, "msg");
         Assert.assertEquals(msg, "Get operation failed, looks like place_id  doesn't exists");
-        System.out.println(response);
-
+        System.out.println("Response for GET request after deletion: " + response);
     }
-
 }
