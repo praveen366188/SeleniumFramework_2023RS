@@ -8,6 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Demo1 {
+
+    //Serialization is the process of converting Java objects into a format (like JSON or XML)
+    // that can be transmitted over a network or stored in a persistent storage.
     public static void main(String[] args) {
         GoogleMap googleMap = new GoogleMap();
         googleMap.setAccuracy(20);

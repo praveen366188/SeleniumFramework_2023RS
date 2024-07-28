@@ -9,6 +9,8 @@ import static io.restassured.RestAssured.given;
 public class Demo1 {
 
     public static void main(String[] args) {
+        // Deserialization is the reverse process of serialization;
+        // it converts the formatted data (JSON or XML) back into Java objects.
         RestAssured.baseURI = "https://reqres.in";
         ListOfResource listOfResource = given().header("Content-Type", "application/json").when().get("/api/unknown")
                 .then().statusCode(200).extract().response().as(ListOfResource.class);

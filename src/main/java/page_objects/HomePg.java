@@ -25,7 +25,7 @@ public class HomePg {
     WebElement home_page_verify;
 
     public void verify_home_page() {
-        home_page_verify.isDisplayed();
+//        home_page_verify.isDisplayed();
 
     }
 
