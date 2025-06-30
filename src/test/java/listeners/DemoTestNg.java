@@ -12,7 +12,6 @@ public class DemoTestNg {
     @Test
     public void test01(){
 
-        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/main/resources/Drivers/chromedriver.exe");
         WebDriver driver=new ChromeDriver();
         driver.get("https://www.instagram.com/");
         driver.manage().window().maximize();

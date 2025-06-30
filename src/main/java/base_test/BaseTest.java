@@ -27,13 +27,10 @@ public class BaseTest {
 
     public void launch_browser() {
         if (properties.getProperty("browser").equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", path + "\\src\\main\\resources\\Drivers\\chromedriver.exe");
             driver = new ChromeDriver();
         } else if (properties.getProperty("browser").equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", path + "\\src\\main\\resources\\Drivers\\geckodriver.exe");
             driver = new FirefoxDriver();
         }else if (properties.getProperty("browser").equals("edge")) {
-            System.setProperty("webdriver.edge.driver", path + "\\src\\main\\resources\\Drivers\\msedgedriver.exe");
             driver = new FirefoxDriver();
         }
 
